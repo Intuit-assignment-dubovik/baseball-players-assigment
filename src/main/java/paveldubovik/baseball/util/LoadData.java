@@ -9,7 +9,6 @@ import paveldubovik.baseball.player.dto.PlayerDto;
 import paveldubovik.baseball.player.service.PlayerService;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -37,7 +36,7 @@ public class LoadData {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             br.readLine();
-            log.debug("Start read file");
+            log.info("Start to read file");
             while ((line = br.readLine()) != null) {
                 String delimiter = ",";
                 String[] data = line.split(delimiter);
@@ -50,7 +49,6 @@ public class LoadData {
                 String birthCountry = data[4];
                 String birthState = data[5];
                 String birthCity = data[6];
-                log.debug("DeathDate: " + data[7]);
                 Integer deathYear = (data[7].isEmpty()) ? null : Integer.parseInt(data[7]);
                 Byte deathMonth = (data[8].isEmpty()) ? null : Byte.parseByte(data[8]);
                 Byte deathDay = (data[9].isEmpty()) ? null : Byte.parseByte(data[9]);
@@ -77,6 +75,6 @@ public class LoadData {
         } catch (IOException e) {
             log.warn("File not found");
         }
-        log.debug("End read file");
+        log.info("Finish to read file");
     }
 }
