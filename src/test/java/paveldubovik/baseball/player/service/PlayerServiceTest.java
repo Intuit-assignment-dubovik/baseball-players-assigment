@@ -1,5 +1,6 @@
 package paveldubovik.baseball.player.service;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,6 +25,7 @@ class PlayerServiceTest {
     private PlayerService service;
 
     @Test
+    @DisplayName("Service: Get all players")
     void testGetPlayers() {
         List<PlayerDto> players = service.getPlayers();
         assertNotNull(players);
@@ -32,7 +34,8 @@ class PlayerServiceTest {
     }
 
     @Test
-    void getPlayerByID() {
+    @DisplayName("Service: Get player by ID")
+    void testGetPlayerByID() {
         // Given
         String playerId = "abadijo01";
         int birthYear = 1850;
@@ -54,8 +57,8 @@ class PlayerServiceTest {
         int height = 72;
         char battingHand = 'R';
         char throwingHand = 'R';
-        LocalDate debut = LocalDate.of(1875, 04, 26);
-        LocalDate finalGame = LocalDate.of(1875, 06, 10);
+        LocalDate debut = LocalDate.of(1875, 4, 26);
+        LocalDate finalGame = LocalDate.of(1875, 6, 10);
         String retroID = "abadj101";
         String bbrefID = "abadijo01";
         PlayerDto expectedPlayer = new PlayerDto(playerId, birthYear, birthMonth, birthDay, birthCountry, birthState, birthCity, deathYear, deathMonth, deathDay,
@@ -69,7 +72,8 @@ class PlayerServiceTest {
     }
 
     @Test
-    void getPlayerByIDIfNotExist() {
+    @DisplayName("Service: Get player by ID if not exists")
+    void testGetPlayerByIDNotExist() {
         // Given
         String playerId = "wrongId";
         // When

@@ -2,7 +2,6 @@ package paveldubovik.baseball.player.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,7 +77,8 @@ class PlayerControllerTest {
     }
 
     @Test
-    void getPlayerByID() throws Exception {
+    @DisplayName("Controler: Get player by ID")
+    void testGetPlayerByID() throws Exception {
         // Given
         String expectedAsString = mapper.writeValueAsString(expectedPlayer);
         // Then
@@ -95,7 +95,8 @@ class PlayerControllerTest {
     }
 
     @Test
-    void getPlayerByIDNotExist() throws Exception {
+    @DisplayName("Controler: Get player by ID if not exists")
+    void testGetPlayerByIDNotExist() throws Exception {
         // Given
         String wrongId = "wrongId";
         // Then
