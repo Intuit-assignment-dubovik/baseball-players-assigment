@@ -6,7 +6,7 @@ import paveldubovik.baseball.player.entity.Player;
 @Mapper(componentModel = "spring")
 public interface PlayerMapper {
 
-    PlayerDto playerDto(Player player);
+    PlayerDto toPlayerDto(Player player);
 
     Player toPlayer(PlayerDto playerDto);
 }
