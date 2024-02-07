@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>paveldubovik</groupId>
 	<artifactId>baseball</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>baseball-players-assigment</name>
 	<description>baseball-players-assigment</description>
 	<properties>

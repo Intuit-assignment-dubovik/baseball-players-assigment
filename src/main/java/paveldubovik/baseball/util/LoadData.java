@@ -71,7 +71,7 @@ public class LoadData {
                 PlayerDto playerDto = new PlayerDto(playerId, birthYear, birthMonth, birthDay, birthCountry, birthState, birthCity, deathYear, deathMonth, deathDay,
                         deathCountry, deathState, deathCity, nameFirst, nameLast, nameGiven, weight, height, battingHand, throwingHand, debut, finalGame,
                         retroID, bbrefID);
-                log.info("Create object {}", playerDto);
+                log.trace("Create object {}", playerDto);
                 service.savePlayer(playerDto);
             }
         } catch (IOException e) {
