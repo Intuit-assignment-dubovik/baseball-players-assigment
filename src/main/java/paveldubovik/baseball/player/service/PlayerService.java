@@ -7,4 +7,5 @@ import java.util.List;
 public interface PlayerService {
     List<PlayerDto> getPlayers();
     PlayerDto getPlayerByID(String playerId);
+    PlayerDto savePlayer(PlayerDto playerDto);
 }

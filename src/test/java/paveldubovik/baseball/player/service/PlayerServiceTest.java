@@ -68,7 +68,7 @@ class PlayerServiceTest {
         PlayerDto player = service.getPlayerByID(playerId);
         // Then
         assertNotNull(player);
-        assertEquals(expectedPlayer.toString(), player.toString());
+        assertEquals(expectedPlayer, player);
     }
 
     @Test

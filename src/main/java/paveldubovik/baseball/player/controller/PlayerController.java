@@ -21,7 +21,7 @@ public class PlayerController {
 
     @GetMapping
     public ResponseEntity<List<PlayerDto>> getPlayers() {
-        log.info("Controller: get all players");
+        log.debug("Controller: get all players");
         List<PlayerDto> players = service.getPlayers();
         return ResponseEntity.ok(players);
     }

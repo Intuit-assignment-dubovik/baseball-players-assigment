@@ -36,4 +36,15 @@ public class PlayerServiceImpl implements PlayerService {
         log.debug("Service: player mapped {}", playerDto);
         return playerDto;
     }
+
+    @Override
+    public PlayerDto savePlayer(PlayerDto playerDto) {
+        log.debug("Saving player - {}", playerDto);
+        Player player = mapper.toPlayer(playerDto);
+        Player savedPlayer = repository.save(player);
+        log.debug("Player saved");
+        return mapper.toPlayerDto(savedPlayer);
+    }
+
+
 }
