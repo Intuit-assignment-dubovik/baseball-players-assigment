@@ -95,7 +95,6 @@ class PlayerControllerTest {
     }
 
     @Test
-    @Disabled
     void getPlayerByIDNotExist() throws Exception {
         // Given
         String wrongId = "wrongId";
