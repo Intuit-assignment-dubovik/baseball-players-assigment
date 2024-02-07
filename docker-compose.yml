@@ -1,0 +1,23 @@
+version: '3.0'
+services:
+  postgres-db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: baseball_db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./postgres/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  baseball:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-db:5432/baseball_db
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
