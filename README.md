@@ -8,3 +8,6 @@
    - GET /api/players - returns the list of all players.
    - GET /api/players/{playerID} - returns a single player by ID.
 7. To run application in Docker container with PostgreSQL `docker-compose up` command should be used.
+
+## if i had an infinite time
+1. I would rework file parcing realization 
